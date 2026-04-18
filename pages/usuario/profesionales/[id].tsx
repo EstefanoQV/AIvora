@@ -41,7 +41,7 @@ export default function ProDetail() {
                   <p style={{fontSize:12.5,color:'var(--gray)'}}>{PRO.spec} · {PRO.region}</p>
                   <div style={{display:'flex',gap:1,marginTop:3}}>
                     {'★★★★★'.split('').map((s,i)=><span key={i} style={{fontSize:12,color:'var(--amber)'}}>{s}</span>)}
-                    <span style={{fontSize:11,color:'var(--gray)',marginLeft:4}}>{PRO.rating} ({PRO.reviews} reseñas)</span>
+                    <span style={{fontSize:11,color:'var(--gray)',marginLeft:4}}>{PRO.rating} </span>
                   </div>
                 </div>
               </div>
