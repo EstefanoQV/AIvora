@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter();
   return (
     <>
-      <Head><title>AIvora — Salud Mental para el Perú</title></Head>
+      <Head><title>AIvora — Salud para el Perú</title></Head>
       <div className="phone-bg">
         <div className="phone">
           <div className="sbar"><span className="sbar-t">9:41</span><span className="sbar-i">●●● WiFi 🔋</span></div>
@@ -42,7 +42,7 @@ export default function Home() {
                 ¿Cómo estás hoy, de verdad?
               </p>
               <p style={{fontSize:13,color:'var(--gray)',lineHeight:1.6}}>
-                Un espacio tuyo para conocer tu estado emocional, sin juicios y completamente gratis.
+                Un espacio tuyo para conocer tu estado de salud completamente gratis.
               </p>
             </div>
 
