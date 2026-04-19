@@ -1,41 +1,41 @@
 // lib/data.ts — reemplaza el archivo completo
 
 export const PROFESSIONALS = [
-  { id:'1', name:'Dr. Carlos Mendoza',   spec:'Médico General',        region:'Cajamarca',     rating:4.9, years:14, sessions:890, tags:['Medicina general','Urgencias','Pediatría'],     available:true,  avatar:'👨‍⚕️', colegiatura:'CMP 58234' },
+  { id:'1', name:'Dr. Carlos Mendoza',   spec:'Médico General',        region:'Jaén',     rating:4.9, years:14, sessions:890, tags:['Medicina general','Urgencias','Pediatría'],     available:true,  avatar:'👨‍⚕️', colegiatura:'CMP 58234' },
   { id:'2', name:'Dra. Rosa Quispe',     spec:'Cardióloga',            region:'Cajamarca',    rating:4.8, years:12, sessions:640, tags:['Corazón','Hipertensión','Prevención'],        available:true,  avatar:'👩‍⚕️', colegiatura:'CMP 44102' },
   { id:'3', name:'Dr. Luis Huanca',      spec:'Internista',            region:'Cajamarca', rating:4.7, years:18, sessions:1200,tags:['Medicina interna','Diabetes','Tiroides'],     available:false, avatar:'👨‍⚕️', colegiatura:'CMP 31087' },
-  { id:'4', name:'Dra. Ana Torres',      spec:'Dermatóloga',           region:'Cajamarca',     rating:4.6, years:8,  sessions:420, tags:['Piel','Alergias','Cabello'],               available:true,  avatar:'👩‍⚕️', colegiatura:'CMP 67340' },
-  { id:'5', name:'Dr. Jorge Mamani',    spec:'Neumólogo',             region:'Cajamarca',    rating:4.8, years:11, sessions:510, tags:['Pulmones','Asma','Respiración'],          available:true,  avatar:'👨‍⚕️', colegiatura:'CMP 52890' },
+  { id:'4', name:'Dra. Ana Torres',      spec:'Dermatóloga',           region:'Cutervo',     rating:4.6, years:8,  sessions:420, tags:['Piel','Alergias','Cabello'],               available:true,  avatar:'👩‍⚕️', colegiatura:'CMP 67340' },
+  { id:'5', name:'Dr. Jorge Mamani',    spec:'Neumólogo',             region:'San Ignacio',    rating:4.8, years:11, sessions:510, tags:['Pulmones','Asma','Respiración'],          available:true,  avatar:'👨‍⚕️', colegiatura:'CMP 52890' },
 ];
 
 export const PATIENTS = [
   { id:'1', name:'María G.',  date:'Hoy, 9:41',  nivel:'Consulta pronto', nivelC:'#E8A020', emoji:'🤒', age:27, region:'Cajamarca',     consented:true,  sintoma:'Dolor de cabeza intenso y fiebre',    scores:[55,40,72,50,82] },
   { id:'2', name:'Juan P.',   date:'Ayer',        nivel:'Urgente',         nivelC:'#C84B4B', emoji:'🚨', age:34, region:'Cajamarca',    consented:true,  sintoma:'Dolor en el pecho y dificultad para respirar', scores:[45,35,30,40,38] },
-  { id:'3', name:'Ana R.',    date:'hace 2 días', nivel:'Sin urgencia',    nivelC:'#3EA66A', emoji:'😷', age:22, region:'Cajamarca',     consented:false, sintoma:'Resfriado leve y congestion nasal',    scores:[78,82,76,85,90] },
+  { id:'3', name:'Ana R.',    date:'hace 2 días', nivel:'Sin urgencia',    nivelC:'#3EA66A', emoji:'😷', age:22, region:'Chota',     consented:false, sintoma:'Resfriado leve y congestion nasal',    scores:[78,82,76,85,90] },
   { id:'4', name:'Carlos M.', date:'hace 3 días', nivel:'Consulta pronto', nivelC:'#E8A020', emoji:'🤢', age:41, region:'Cajamarca',     consented:true,  sintoma:'Náuseas y dolor abdominal persistente', scores:[60,55,62,50,58] },
-  { id:'5', name:'Rosa F.',   date:'hace 4 días', nivel:'Sin urgencia',    nivelC:'#3EA66A', emoji:'🤧', age:29, region:'Cajamarca', consented:true,  sintoma:'Alergia estacional y picazón ocular', scores:[72,78,80,75,85] },
+  { id:'5', name:'Rosa F.',   date:'hace 4 días', nivel:'Sin urgencia',    nivelC:'#3EA66A', emoji:'🤧', age:29, region:'Jaén', consented:true,  sintoma:'Alergia estacional y picazón ocular', scores:[72,78,80,75,85] },
 ];
 
 export const ADMIN_USERS = [
   { id:'1', name:'María G.',   region:'Cajamarca',     reg:'01/04/25', checks:7,  nivel:'Consulta pronto', nivelC:'#E8A020', status:'Activo'   },
   { id:'2', name:'Juan P.',    region:'Cajamarca',    reg:'28/03/25', checks:12, nivel:'Urgente',         nivelC:'#C84B4B', status:'Activo'   },
-  { id:'3', name:'Ana R.',     region:'Cajamarca',     reg:'15/03/25', checks:22, nivel:'Sin urgencia',    nivelC:'#3EA66A', status:'Activo'   },
+  { id:'3', name:'Ana R.',     region:'Celendin',     reg:'15/03/25', checks:22, nivel:'Sin urgencia',    nivelC:'#3EA66A', status:'Activo'   },
   { id:'4', name:'Carlos M.',  region:'Cajamarca', reg:'10/03/25', checks:8,  nivel:'Consulta pronto', nivelC:'#E8A020', status:'Inactivo' },
   { id:'5', name:'Rosa F.',    region:'Cajamarca',     reg:'05/03/25', checks:15, nivel:'Sin urgencia',    nivelC:'#3EA66A', status:'Activo'   },
-  { id:'6', name:'Pedro V.',   region:'Cajamarca',    reg:'01/03/25', checks:3,  nivel:'Consulta pronto', nivelC:'#E8A020', status:'Activo'   },
+  { id:'6', name:'Pedro V.',   region:'Cutervo',    reg:'01/03/25', checks:3,  nivel:'Consulta pronto', nivelC:'#E8A020', status:'Activo'   },
   { id:'7', name:'Lucía T.',   region:'Cajamarca',     reg:'20/02/25', checks:31, nivel:'Sin urgencia',    nivelC:'#3EA66A', status:'Activo'   },
-  { id:'8', name:'Miguel R.',  region:'Cajamarca',    reg:'18/02/25', checks:5,  nivel:'Urgente',         nivelC:'#C84B4B', status:'Activo'   },
+  { id:'8', name:'Miguel R.',  region:'Chota',    reg:'18/02/25', checks:5,  nivel:'Urgente',         nivelC:'#C84B4B', status:'Activo'   },
 ];
 
 export const REGION_DATA = [
   { r:'Cajamarca',        users:4820, activos:312, urgentes:18, pros:42 },
-  { r:'Cajamarca',       users:1240, activos:98,  urgentes:7,  pros:14 },
-  { r:'Cajamarca',    users:980,  activos:67,  urgentes:4,  pros:11 },
-  { r:'Cajamarca',       users:730,  activos:52,  urgentes:5,  pros:8  },
-  { r:'Cajamarca', users:620,  activos:41,  urgentes:3,  pros:7  },
-  { r:'Cajamarca',        users:540,  activos:38,  urgentes:6,  pros:5  },
-  { r:'Cajamarca',       users:480,  activos:32,  urgentes:2,  pros:6  },
-  { r:'Cajamarca',      users:310,  activos:18,  urgentes:4,  pros:3  },
+  { r:'Jaén',       users:1240, activos:98,  urgentes:7,  pros:14 },
+  { r:'San Ignacio',    users:980,  activos:67,  urgentes:4,  pros:11 },
+  { r:'Chota',       users:730,  activos:52,  urgentes:5,  pros:8  },
+  { r:'Cutervo', users:620,  activos:41,  urgentes:3,  pros:7  },
+  { r:'Cajabamba',        users:540,  activos:38,  urgentes:6,  pros:5  },
+  { r:'Celendín',       users:480,  activos:32,  urgentes:2,  pros:6  },
+  { r:'Contumazá',      users:310,  activos:18,  urgentes:4,  pros:3  },
 ];
 
 export const WEEK_BARS = [

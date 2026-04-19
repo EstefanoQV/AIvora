@@ -1,6 +1,9 @@
+'use client';
+
 import Head from 'next/head';
 import Link from 'next/link';
-import { REGION_DATA, ADMIN_USERS } from '../../lib/data';
+import { REGION_DATA, ADMIN_USERS } from '@/lib/data';
+
 
 const DAILY = [180,210,195,240,285,260,312,290,330,358];
 const DAILY_LABELS = ['26/3','27/3','28/3','29/3','30/3','31/3','01/4','02/4','03/4','04/4'];
@@ -14,15 +17,15 @@ export default function AdminDashboard() {
       <div className="admin-wrap">
         <Sidebar active="dashboard" />
         <main className="admin-main">
-          <div className="ah1">Panel de control</div>
-          <div className="ah1-sub">Sábado, 5 de abril 2025 · Actualizado hace 3 min</div>
+          <div className="ah1">Panel de control nacional</div>
+          <div className="ah1-sub" suppressHydrationWarning>Sábado, 5 de abril 2025 · Actualizado hace 3 min</div>
 
           {/* KPIs */}
           <div className="kpi-grid">
-            <div className="kpi"><div className="kpi-lbl">USUARIOS REGISTRADOS</div><div className="kpi-val" style={{color:'var(--navy)'}}>9,720</div><div className="kpi-delta" style={{color:'var(--green)'}}>+4.2% esta semana</div></div>
+            <div className="kpi"><div className="kpi-lbl">USUARIOS REGISTRADOS</div><div className="kpi-val" style={{color:'var(--navy)'}}>9,720</div><div className="kpi-delta" style={{color:'var(--green)'}}>+4.2% esta semana</div><div className="kpi-note">En 8 regiones activas</div></div>
             <div className="kpi"><div className="kpi-lbl">CHECK-INS HOY</div><div className="kpi-val" style={{color:'var(--terra)'}}>358</div><div className="kpi-delta" style={{color:'var(--green)'}}>+12% vs ayer</div><div className="kpi-note">Pico: 9–10 AM</div></div>
             <div className="kpi"><div className="kpi-lbl">CASOS URGENTES HOY</div><div className="kpi-val" style={{color:'var(--red)'}}>38</div><div className="kpi-delta" style={{color:'var(--red)'}}>+3 vs ayer</div><div className="kpi-note">11% del total</div></div>
-            <div className="kpi"><div className="kpi-lbl">PROFESIONALES ACTIVOS</div><div className="kpi-val" style={{color:'var(--sage)'}}>96</div><div className="kpi-delta" style={{color:'var(--green)'}}>+8 verificados</div></div>
+            <div className="kpi"><div className="kpi-lbl">PROFESIONALES ACTIVOS</div><div className="kpi-val" style={{color:'var(--sage)'}}>96</div><div className="kpi-delta" style={{color:'var(--green)'}}>+8 verificados</div><div className="kpi-note">En 8 provincias</div></div>
           </div>
 
           <div style={{display:'flex',gap:16,marginBottom:18,flexWrap:'wrap'}}>
@@ -84,6 +87,35 @@ export default function AdminDashboard() {
               </div>
             </div>
           </div>
+
+          {/* Region table preview */}
+          <div className="tw">
+            <div style={{padding:'16px 18px 0',display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:14}}>
+              <h3 style={{fontFamily:'var(--f-serif)',fontSize:17,fontWeight:600,color:'var(--coal)'}}>Por región (top 5)</h3>
+              <Link href="/admin/analiticas" style={{fontSize:12,color:'var(--terra)',fontWeight:700}}>Ver todo →</Link>
+            </div>
+            <table className="at">
+              <thead><tr><th>Región</th><th>Usuarios</th><th>Activos</th><th>Urgentes</th><th>Profesionales</th></tr></thead>
+              <tbody>
+                {REGION_DATA.slice(0,5).map(r=>(
+                  <tr key={r.r}>
+                    <td style={{fontWeight:700}}>{r.r}</td>
+                    <td>{r.users.toLocaleString()}</td>
+                    <td>
+                      <div style={{display:'flex',alignItems:'center',gap:7}}>
+                        <div style={{flex:1,height:5,background:'var(--cream-d)',borderRadius:99,maxWidth:80}}>
+                          <div style={{height:'100%',borderRadius:99,background:'var(--terra)',width:`${Math.round((r.activos/312)*100)}%`}} />
+                        </div>
+                        <span style={{fontSize:12,color:'var(--gray)'}}>{r.activos}</span>
+                      </div>
+                    </td>
+                    <td><span className="badge" style={{background:r.urgentes>5?'rgba(200,75,75,.12)':'rgba(232,160,32,.12)',color:r.urgentes>5?'var(--red)':'var(--yellow)'}}>{r.urgentes} urgentes</span></td>
+                    <td>{r.pros}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </main>
       </div>
     </>
@@ -95,13 +127,12 @@ export function Sidebar({ active }: { active: string }) {
     {id:'dashboard',icon:'📊',label:'Dashboard',  href:'/admin'},
     {id:'usuarios', icon:'👥',label:'Usuarios',   href:'/admin/usuarios'},
     {id:'pros',     icon:'🩺',label:'Profesionales',href:'/admin/profesionales'},
+    {id:'analytics',icon:'📈',label:'Analíticas', href:'/admin/analiticas'},
   ];
   return (
     <div className="admin-side">
       <div className="aside-logo">
-        {/* Logo: reemplaza por <img src="/logo.png" width={38} height={38} /> */}
-        <img src="/logo1.png" width={80} height={80} />
-        <text style={{fontSize:80,fontWeight:'bold',color:'var(--navy)'}}> </text>
+        <img src="/logo1.png" width={96} height={96} alt="AIvora" />
         <div className="aside-name">AIvora</div>
         <div className="aside-sub">PANEL ADMIN</div>
       </div>
@@ -117,4 +148,4 @@ export function Sidebar({ active }: { active: string }) {
       </div>
     </div>
   );
-} 
+}
