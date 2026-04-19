@@ -68,7 +68,7 @@ export const GUIDES = [
   {cat:'Prevención',          icon:'🛡️', title:'Chequeos preventivos según tu edad',       pages:'7 págs', offline:true},
 ];
 
-export const REGIONS = ['Lima','Cusco','Arequipa','Piura','La Libertad','Junín','Puno','Loreto','Huánuco','Cajamarca','Tacna','Otras'];
+export const REGIONS = ['Cajamarca','Jaén','San Ignacio','Chota','Cutervo','Cajabamba','Celendín','Contumazá'];
 
 export const CHECKIN_QS = [
   {
